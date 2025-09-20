@@ -1,0 +1,459 @@
+/* Modern UI/UX Improvements for IISF KNIT Website */
+
+/* ========================================
+   GLOBAL IMPROVEMENTS
+   ======================================== */
+
+/* Smooth scrolling for all links */
+html {
+  scrol/* Loading animation for dynamically loaded content */
+#student-committee-container {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-in-out;
+  min-height: 200px;
+}
+
+#student-committee-container.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Loading spinner for student committee */
+#student-committee-container:not(.loaded)::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0 -20px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #f5930e;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}r: smooth;
+}
+
+/* Remove redundant empty lines spacing */
+.about {
+  padding-top: 60px !important;
+}
+
+/* ========================================
+   HEADER IMPROVEMENTS
+   ======================================== */
+
+/* Modern header styling */
+#header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Navigation improvements */
+.nav-menu ul li a {
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-menu ul li a:hover {
+  color: #f5930e;
+  transform: translateY(-2px);
+}
+
+/* Modern underline effect for navigation */
+.nav-menu ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 50%;
+  background: linear-gradient(45deg, #f5930e, #ff6b35);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-menu ul li a:hover::after,
+.nav-menu ul li.active a::after {
+  width: 80%;
+}
+
+/* ========================================
+   SECTION IMPROVEMENTS
+   ======================================== */
+
+/* Modern section spacing */
+section {
+  scroll-margin-top: 80px;
+}
+
+/* Enhanced section titles */
+.section-title h2 {
+  font-weight: 700;
+  background: linear-gradient(45deg, #333, #f5930e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 20px;
+}
+
+.section-title p {
+  font-size: 16px;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   ABOUT SECTION IMPROVEMENTS
+   ======================================== */
+
+.about .content h3 {
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.about .content h3::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(45deg, #f5930e, #ff6b35);
+  border-radius: 2px;
+}
+
+.about .content p {
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+/* ========================================
+   CARD IMPROVEMENTS
+   ======================================== */
+
+/* Modern card styling for student committee members only */
+.student-committee .member {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  height: 100%;
+}
+
+.student-committee .member:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.student-committee .member-info {
+  padding: 25px 20px;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.student-committee .member-info h4 {
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 18px;
+}
+
+.student-committee .member-info span {
+  color: #f5930e;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ========================================
+   PORTFOLIO/STARTUPS IMPROVEMENTS
+   ======================================== */
+
+.portfolio-wrap {
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+}
+
+.portfolio-wrap:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* ========================================
+   MODERN BUTTONS
+   ======================================== */
+
+.btn-modern {
+  background: linear-gradient(45deg, #f5930e, #ff6b35);
+  border: none;
+  border-radius: 30px;
+  color: white;
+  padding: 12px 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(245, 147, 14, 0.3);
+}
+
+.btn-modern:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(245, 147, 14, 0.4);
+  color: white;
+}
+
+/* ========================================
+   RESPONSIVE IMPROVEMENTS
+   ======================================== */
+
+/* Better mobile spacing */
+@media (max-width: 768px) {
+  .section-title h2 {
+    font-size: 28px;
+  }
+  
+  .section-title p {
+    font-size: 14px;
+  }
+  
+  .student-committee .member-info {
+    padding: 20px 15px;
+  }
+  
+  .about .content h3 {
+    font-size: 22px;
+  }
+}
+
+/* ========================================
+   TEAM SECTION FIXES (ensure original team styles work)
+   ======================================== */
+
+/* Ensure original team section styling is preserved */
+.team .member-info {
+  display: block !important;
+  padding: 0 !important;
+  text-align: left !important;
+  height: auto !important;
+  flex-direction: initial !important;
+  justify-content: initial !important;
+}
+
+.team .member-info h4 {
+  font-weight: 700 !important;
+  margin: 15px 0 5px 0 !important;
+  font-size: 18px !important;
+  color: #333 !important;
+}
+
+.team .member-info span {
+  display: block !important;
+  font-size: 13px !important;
+  text-transform: uppercase !important;
+  font-weight: 400 !important;
+  margin-bottom: 15px !important;
+  color: rgb(245, 147, 0) !important;
+}
+
+.team .member-info p {
+  font-style: italic !important;
+  font-size: 14px !important;
+  line-height: 26px !important;
+  color: #888888 !important;
+}
+
+/* ========================================
+   LOADING ANIMATIONS
+   ======================================== */
+
+/* Fade in animation for dynamically loaded content */
+#student-committee-container {
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+#student-committee-container.loaded {
+  opacity: 1;
+}
+
+/* ========================================
+   TESTIMONIALS IMPROVEMENTS
+   ======================================== */
+
+.testimonial-item {
+  background: #fff;
+  border-radius: 15px;
+  padding: 30px;
+  margin: 10px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.testimonial-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* ========================================
+   FOOTER IMPROVEMENTS
+   ======================================== */
+
+#footer {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+}
+
+.footer-top {
+  padding: 60px 0 30px 0;
+}
+
+.social-links a {
+  background: linear-gradient(45deg, #f5930e, #ff6b35);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 8px 25px rgba(245, 147, 14, 0.4);
+}
+
+/* ========================================
+   SCROLL TO TOP BUTTON
+   ======================================== */
+
+.back-to-top {
+  background: linear-gradient(45deg, #f5930e, #ff6b35);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.back-to-top:hover {
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 8px 25px rgba(245, 147, 14, 0.4);
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+.text-gradient {
+  background: linear-gradient(45deg, #f5930e, #ff6b35);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.shadow-modern {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.rounded-modern {
+  border-radius: 15px;
+}
+
+/* ========================================
+   FINAL UI/UX POLISH
+   ======================================== */
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition: all 0.3s ease;
+}
+
+/* Improved focus states for accessibility */
+button:focus,
+.btn:focus,
+.btn-modern:focus,
+a:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Better text selection */
+::selection {
+  background: var(--primary-color);
+  color: white;
+}
+
+::-moz-selection {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* Improved scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+}
+
+/* Loading state improvements */
+.loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Performance optimizations */
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Remove redundant margins and padding */
+.no-redundant-space {
+  margin: 0;
+  padding: 0;
+}
+
+/* Clean up excessive spacing */
+.section-clean {
+  padding: 60px 0;
+}
+
+@media (max-width: 768px) {
+  .section-clean {
+    padding: 40px 0;
+  }
+}
